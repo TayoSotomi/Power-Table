@@ -7,10 +7,10 @@ using System.Runtime.InteropServices;
 
 bool ToContinue = true;
 
-do
+while (ToContinue == true) 
 {
 
-    Console.WriteLine("Leran your squares and cubes!");
+Console.WriteLine("Leran your squares and cubes!");
 
     bool userEntry = true;
     int enteredInt = 0;
@@ -20,9 +20,9 @@ do
         Console.WriteLine("Please enter an integer: {user input here, for example:5}");
         enteredInt = int.Parse(Console.ReadLine());
         //Find out the maximum number whose cube will fit in an int, and limit the user input to that number or less
-        if (enteredInt > 0 && enteredInt < 1290)
+        if (enteredInt > 0 || enteredInt <= 1290)
         {
-            userEntry = false;
+            userEntry = true;
         }
     }
     //The application displays a table of squares and cubes from 1 to the value entered.
@@ -50,7 +50,7 @@ do
         ToContinue = true;
     }
 }
-while (ToContinue == true);
+
 
 
 
