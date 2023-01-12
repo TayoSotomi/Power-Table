@@ -1,5 +1,4 @@
 ﻿
-//The application prompts the user to enter an integer.
 
 
 using System.Runtime.InteropServices;
@@ -17,12 +16,13 @@ Console.WriteLine("Leran your squares and cubes!");
     //Provide validation by rejecting 0 or negative numbers as user input; keep prompting the user until they enter a valid number.
     while (userEntry)
     {
-        Console.WriteLine("Please enter an integer: {user input here, for example:5}");
+        //The application prompts the user to enter an integer.
+                Console.WriteLine("Please enter an integer: {user input here, for example:5}");
         enteredInt = int.Parse(Console.ReadLine());
         //Find out the maximum number whose cube will fit in an int, and limit the user input to that number or less
         if (enteredInt > 0 || enteredInt <= 1290)
         {
-            userEntry = true;
+            userEntry = false;
         }
     }
     //The application displays a table of squares and cubes from 1 to the value entered.
@@ -42,12 +42,24 @@ Console.WriteLine("Leran your squares and cubes!");
 
     }
     // The application prompts the user to continue.
-    Console.WriteLine("Continue? (y/n): {user input here, for example: Y}");
-    string cont = Console.ReadLine().Trim().ToLower();
-
-    if (cont == "y")
+    while (true)
     {
-        ToContinue = true;
+        Console.WriteLine("Continue? (y/n): {user input here, for example: Y}");
+        string cont = Console.ReadLine().Trim().ToLower();
+
+        if (cont == "y")
+        {
+            ToContinue = true;
+        }
+        else if (cont == "n")
+        {
+            ToContinue = false;
+        }
+        else
+        {
+            ToContinue= false;
+        }
+        break;
     }
 }
 
@@ -82,7 +94,7 @@ Console.WriteLine("Leran your squares and cubes!");
 
 
 
-
+//Methods
 
 
     static int SquareNumber(int num)
