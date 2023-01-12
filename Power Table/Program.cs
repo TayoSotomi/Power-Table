@@ -27,18 +27,15 @@ Console.WriteLine("Leran your squares and cubes!");
     }
     //The application displays a table of squares and cubes from 1 to the value entered.
     // Research formatted strings and right-align the numbers in columns instead of left-aligning them
-    string string1 = "Number";
-    string string2 = "Square";
-    string string3 = "Cubed";
-    Console.WriteLine(string.Format("{0,-10}{1,-15}{2,-25}",string1,string2,string3));
-    Console.WriteLine("======\t============\t===========");
+   
+    Console.WriteLine(string.Format("{0,15}{1,15}{2,15}","Number","Square","Cubed"));
+    Console.WriteLine(string.Format("{0,15}{1,15}{2,15}", "=======","=======","======="));
+
 
     for (int Num = 1; Num <= enteredInt; Num++)
     {
-        int Square = SquareNumber(Num);
-        int Cubed = cubeNumber(Num);
-
-        Console.WriteLine(String.Format("{0,-10}{1,-15}{2,-25}", Num, Square, Cubed));
+       
+        Console.WriteLine(String.Format("{0,15}{1,15}{2,15}", Num, SquareNumber(Num), cubeNumber(Num)));
 
     }
     // The application prompts the user to continue.
@@ -50,16 +47,14 @@ Console.WriteLine("Leran your squares and cubes!");
         if (cont == "y")
         {
             ToContinue = true;
+            break;
         }
         else if (cont == "n")
         {
             ToContinue = false;
+            break;
         }
-        else
-        {
-            ToContinue= false;
-        }
-        break;
+                
     }
 }
 
